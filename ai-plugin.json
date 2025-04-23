@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "WNTR Hydraulic Simulator",
+  "name_for_model": "wntr_simulator",
+  "description_for_human": "Upload an EPANET .inp file to simulate water distribution using WNTR and get pressure statistics and plots.",
+  "description_for_model": "Given a .inp file, simulate the EPANET water network using WNTR and return node pressure summary and chart.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://wntr-chatgpt.onrender.com/openapi.yaml"
+  },
+  "logo_url": "https://avatars.githubusercontent.com/u/6154722?s=200&v=4",
+  "contact_email": "raza@example.com",
+  "legal_info_url": "https://github.com/razaali10"
+}
