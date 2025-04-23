@@ -67,5 +67,13 @@ async def simulate_epanet(inp_file: UploadFile = File(...)):
 
     except Exception as e:
         return JSONResponse({"status": "error", "message": str(e)}, status_code=500)
+
+# Mount static and .well-known
+from fastapi.staticfiles import StaticFiles
+import os
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/.well-known", StaticFiles(directory=".well-known"), name="well-known")
    
-        
+           
+          
