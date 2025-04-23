@@ -1,16 +1,16 @@
 openapi: 3.0.2
 info:
   title: WNTR EPANET Simulation API
-  description: Simulates EPANET models and returns pressure summaries and plots.
-  version: "1.0.0"
-
+  description: Simulate EPANET water networks using WNTR and return pressure summaries and plots.
+  version: "1.1.0"
 servers:
   - url: https://wntr-chatgpt.onrender.com
 
 paths:
   /simulate:
     post:
-      summary: Run simulation on .inp file
+      summary: Run EPANET simulation
+      operationId: simulate_epanet
       requestBody:
         required: true
         content:
@@ -23,7 +23,7 @@ paths:
                   format: binary
       responses:
         '200':
-          description: Successful simulation result
+          description: Simulation results
           content:
             application/json:
               schema:
@@ -33,7 +33,7 @@ paths:
                     type: string
                   summary:
                     type: object
-                  pressure_plot_base64:
+                  markdown:
                     type: string
-
-               
+                  html_chart:
+                    type: string
