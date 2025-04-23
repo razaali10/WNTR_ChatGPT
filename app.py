@@ -74,6 +74,18 @@ import os
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 app.mount("/.well-known", StaticFiles(directory=".well-known"), name="well-known")
+
+
+# Safe mounts only if folders exist
+from fastapi.staticfiles import StaticFiles
+import os
+
+if os.path.exists(".well-known"):
+    app.mount("/.well-known", StaticFiles(directory=".well-known"), name="well-known")
+
+if os.path.exists("static"):
+    app.mount("/static", StaticFiles(directory="static"), name="static")
    
            
+          
           
