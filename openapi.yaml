@@ -3,11 +3,16 @@ info:
   title: WNTR EPANET Simulation API
   description: Simulates EPANET models and returns pressure summaries and plots.
   version: "1.0.0"
+
+servers:
+  - url: https://wntr-chatgpt.onrender.com
+
 paths:
   /simulate:
     post:
       summary: Run simulation on .inp file
       requestBody:
+        required: true
         content:
           multipart/form-data:
             schema:
@@ -18,7 +23,7 @@ paths:
                   format: binary
       responses:
         '200':
-          description: Successful response
+          description: Successful simulation result
           content:
             application/json:
               schema:
@@ -30,3 +35,5 @@ paths:
                     type: object
                   pressure_plot_base64:
                     type: string
+
+               
