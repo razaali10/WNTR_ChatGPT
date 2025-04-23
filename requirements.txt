@@ -3,3 +3,4 @@ uvicorn
 wntr
 matplotlib
 pandas
+python-multipart
